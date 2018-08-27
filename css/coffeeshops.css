@@ -1,0 +1,64 @@
+	
+	
+.faq-row {
+    margin-bottom: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+	margin: 30px;
+	text-decoration: none;
+	font-size: 20px;
+
+	
+
+}
+
+.faq-row-handle {
+    cursor: pointer;
+    display: block;
+    color: white;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 7px 30px 7px 10px;
+    line-height: 20px;
+    text-decoration: none;
+    outline: 0;
+	
+}
+
+.faq-row.open .faq-row-handle {
+   color: white;
+       text-decoration: none;
+	   
+
+}
+
+.faq-row-content {
+    color: #000;
+    font-weight: normal;
+    line-height: 150%;
+    font-size: 15px;
+    display: none;
+	text-decoration: none;
+
+
+}
+.faq-row-content-show {
+    font-size: 15px;
+    display: none;
+	    text-decoration: none;
+		background:white;
+	    font-family: Arial, Helvetica, sans-serif;	
+
+
+}
+
+
+div.faq-row-container >div {
+	background: #8FAE2D;
+	border: none;
+	
+}
+/*alternar color en los divs*/
+div.faq-row-container > div:nth-of-type(odd) {
+    background: #825A2C;
+}
+a { color: inherit; } 

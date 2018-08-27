@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+
+    <html>
+    <head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <link rel="stylesheet" type="text/css" href="css/mapa.css">
+
+  <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB60hq2hwA1xiAssRR4qupofNJLrtQUfo&sensor=false">
+  </script>
+  <script type="text/javascript" src="js/mapa.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+             <script src="js/jquery-3.2.1.min.js"></script>
+
+        <style>
+    #map {
+      width: 99%;
+      height: 30rem;
+      position: fixed;
+    }
+            .buttons{
+    background-color: #6F4E37; /* Green */
+    border: solid;
+    border-color:white;
+    color: white;
+    padding: 12px 5px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Avant Garde', 'Avantgarde', "Century Gothic",'Trebuchet MS','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 80%;
+    width: 50%;
+}
+  </style>
+<link rel="stylesheet" href="css/jquery.modal.min.css" type="text/css" media="screen" />
+
+ <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+		 <link rel="stylesheet" type="text/css" href="css/coffeeshops.css">
+
+
+
+
+
+
+
+        <title>Café con sabor a mi tierra</title>
+
+    </head>
+    <header style="width:100%;">
+  <a style="text-decoration: none" href="menu.html"  class="hamburger"><img src="img/cafe/IconCoffeeCup.png" style="width:20%;  padding-top: 0.3em; position: relative;
+		top: 0;
+		left: 0;"></a>
+ <strong>  <span style="padding-left:4.7em;  color:white; font-size:16px; text-transform:initial; text-align:center;">Café... con sabor a mi Tierra </span></strong>
+</header>
+
+
+
+
+    <body style="margin:0; ;padding: 0; width:100%;">
+<body onload="loadpage();">
+  <div id="full">
+
+    <p style="font-size: 0.8em; display: block;text-align: center; color: #2b64a9"><strong>Cafés cerca de tí</strong>  </p>
+    <button class="buttons" onclick="showmapa()" >Mapa</button><button class="buttons" onclick="showdir()">Cercanía</button>
+<div class="app">
+
+
+      <div id="map">
+
+      </div>
+
+
+      <div id="directorio">
+
+
+
+    </div>
+          <div id="ex1" class="modal" style="display:none;">
+  <p>Thanks for clicking. That felt good.</p>
+  <a href="#" rel="modal:close">Close</a>
+</div>
+
+<!-- Link to open the modal -->
+
+
+     <div id="AromaCafe"  style="display:none;" class="modal"> <span class=titulomap>	Aroma Cafe	</span><br>	<a href="https://maps.google.com/maps?q=14.160916,-88.037382"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="BaristaCorner"  style="display:none;" class="modal"> <span class=titulomap>	Barista Corner	</span><br>	<a href="https://maps.google.com/maps?q=15.4985678,-88.0387853"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="CafCostello"  style="display:none;" class="modal"> <span class=titulomap>	Café Costello	</span><br>	<a href="https://maps.google.com/maps?q=15.5387216,-88.0384576"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="CafDonNapo"  style="display:none;" class="modal"> <span class=titulomap>	Café Don Napo	</span><br>	<a href="https://maps.google.com/maps?q=14.1647206,-88.0340019"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="CafRuralSeisValles."  style="display:none;" class="modal"> <span class=titulomap>	Café Rural Seis Valles.	</span><br>	<a href="https://maps.google.com/maps?q=14.837812,-88.784949"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="SofysCake"  style="display:none;" class="modal"> <span class=titulomap>	Sofys Cake	</span><br>	<a href="https://maps.google.com/maps?q=15.786811,-86.781886"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="Cafetano1"  style="display:none;" class="modal"> <span class=titulomap>	Cafetano 1	</span><br>	<a href="https://maps.google.com/maps?q=14.0931209,-87.1814592"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="Cafetano2"  style="display:none;" class="modal"> <span class=titulomap>	Cafetano 2	</span><br>	<a href="https://maps.google.com/maps?q=14.1058776,-87.1718192"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="CafeterialaSierra"  style="display:none;" class="modal"> <span class=titulomap>	Cafeteria la Sierra	</span><br>	<a href="https://maps.google.com/maps?q=14.1040487,-87.2041951"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="DonCafeHN"  style="display:none;" class="modal"> <span class=titulomap>	Don Cafe HN	</span><br>	<a href="https://maps.google.com/maps?q=14.1009254,-87.1827243"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="ElDoraoCafe"  style="display:none;" class="modal"> <span class=titulomap>	El Dorao Cafe	</span><br>	<a href="https://maps.google.com/maps?q=14.9660839,-88.0266113"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="FincaMargarita"  style="display:none;" class="modal"> <span class=titulomap>	Finca Margarita	</span><br>	<a href="https://maps.google.com/maps?q=13.937157!4d-87.294157"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="IvosCafe"  style="display:none;" class="modal"> <span class=titulomap>	Ivos Cafe	</span><br>	<a href="https://maps.google.com/maps?q=14.9431137!4d-88.0371392"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="KaldisCoffeeShol"  style="display:none;" class="modal"> <span class=titulomap>	Kaldis Coffee Shop</span><br>	<a href="https://maps.google.com/maps?q=14.767218!4d-88.777556"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="LeyendasCafe"  style="display:none;" class="modal"> <span class=titulomap>	Leyendas Cafe	</span><br>	<a href="https://maps.google.com/maps?q=14.8528531,-85.8996783"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="Mopitos"  style="display:none;" class="modal"> <span class=titulomap>	Mopitos	</span><br>	<a href="https://maps.google.com/maps?q=14.1009777,-87.176352"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="Nicolatis"  style="display:none;" class="modal"> <span class=titulomap>	Nicolatis	</span><br>	<a href="https://maps.google.com/maps?q=14.076331,-87.2037497"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="OHCAFE"  style="display:none;" class="modal"> <span class=titulomap>	OH CAFE	</span><br>	<a href="https://maps.google.com/maps?q=14.4595223!4d-87.6396266"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="PlazaCafeCholuteca"  style="display:none;" class="modal"> <span class=titulomap>	Plaza Cafe Choluteca	</span><br>	<a href="https://maps.google.com/maps?q=13.312383!4d-87.177742"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="PlazaCafeDanli"  style="display:none;" class="modal"> <span class=titulomap>	Plaza Cafe Danli	</span><br>	<a href="https://maps.google.com/maps?q=14.027201!4d-86.578781"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="PlazaCafelaceiba"  style="display:none;" class="modal"> <span class=titulomap>	Plaza Cafe la ceiba	</span><br>	<a href="https://maps.google.com/maps?q=15.771387!4d-86.791725"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+<div id="PlazaCafeTegucigalpa"  style="display:none;" class="modal"> <span class=titulomap>	Plaza Cafe Tegucigalpa	</span><br>	<a href="https://maps.google.com/maps?q=14.0772005,-87.2043771"> LLÉVAME HACIA ESTE CAFÉ</a></div>
+
+
+
+
+    </div>
+
+
+
+<script type="text/javascript" src="cordova.js"></script>
+
+  <script>
+  function loadpage() {
+      $("#map").show();
+      $("#directorio").hide();
+}
+function showmapa() {
+  $("#map").show();
+  $("#directorio").hide();
+}
+function showdir() {
+  $("#map").hide();
+  $("#directorio").show();
+}
+  </script>
+
+
+
+</body>
+
+
+</html>
